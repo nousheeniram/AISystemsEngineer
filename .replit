@@ -34,10 +34,6 @@ outputType = "webview"
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 46247
-externalPort = 3000
-
 [deployment]
-run = ["sh", "-c", "/nix/store/cn7gx98bvd6qj3jrh5v21q868nlv2jv6-python3-wrapper/bin/python3 $file"]
-deploymentTarget = "cloudrun"
+run = ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "5000"]
+deploymentTarget = "autoscale"

@@ -70,6 +70,21 @@ wine-quality-mlops/
 
 ## 🚀 Quick Start
 
+### Deployment on Replit
+
+**Ready to deploy?** This project is pre-configured for Replit Autoscale Deployment:
+
+1. Click the **Deploy** button in Replit
+2. Select **Autoscale Deployment** (already configured)
+3. Click **Deploy** - that's it!
+
+The deployment configuration automatically runs:
+```bash
+uvicorn src.api.main:app --host 0.0.0.0 --port 5000
+```
+
+For detailed deployment instructions, see **[DEPLOYMENT.md](DEPLOYMENT.md)**.
+
 ### Prerequisites
 - Python 3.11+
 - pip
