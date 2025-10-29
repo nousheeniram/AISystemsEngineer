@@ -1,0 +1,31 @@
+# Version control & metadata
+.git
+.gitignore
+.gitattributes
+.github
+
+# Python env & caches
+.venv
+__pycache__
+.pytest_cache
+*.pyc
+*.pyo
+
+# Local OS & editor
+.DS_Store
+*.swp
+*.swo
+
+# Large local-only stuff (KEEP models for serving)
+mlruns
+.local
+.replit
+*.ipynb
+
+# Tests and docs not needed inside the runtime image
+tests
+*.md
+
+# Optional: raw data not needed in the container
+# (API serves predictions from the trained model; training is done elsewhere)
+data
