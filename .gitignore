@@ -66,3 +66,8 @@ logs/
 # Data (keep sample data)
 # Uncomment if you don't want to track data files
 # data/*.csv
+
+# Misc hidden files
+*.tmp
+*.bak
+*.lock

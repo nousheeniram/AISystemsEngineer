@@ -1,0 +1,30 @@
+name: Train
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "src/**"
+      - "train_pipeline.py"
+      - "config/**"
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Set MLflow local URIs
+        run: |
+          echo "MLFLOW_TRACKING_URI=file:./mlruns" >> $GITHUB_ENV
+          echo "MLFLOW_REGISTRY_URI=file:./mlruns" >> $GITHUB_ENV
+      - name: Train
+        run: python train_pipeline.py
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: |
+            models/
+            mlruns/
