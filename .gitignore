@@ -71,3 +71,5 @@ logs/
 *.tmp
 *.bak
 *.lock
+# macOS system files
+.DS_Store
