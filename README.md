@@ -66,9 +66,6 @@ GitHub Actions handled automation well for a small project
 
 # Install dependencies
 pip install -r requirements.txt
-```
-
-### Running the Pipeline
 
 #### 1. Train the Model
 
