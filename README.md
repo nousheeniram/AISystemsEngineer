@@ -1,8 +1,10 @@
-# Wine Quality Prediction MLOps Pipeline
+# Wine Quality Prediction – MLOps Project
 
-A production-ready MLOps pipeline for predicting wine quality using machine learning, featuring automated training, experiment tracking, and REST API deployment.
+This project demonstrates how I built a simple but complete MLOps pipeline for predicting wine quality using machine learning.  
+It includes data loading, model training, experiment tracking, and deployment through a FastAPI REST service.
 
-## 🎯 Overview
+
+##  Overview
 
 This project implements an end-to-end MLOps system for wine quality prediction, demonstrating best practices in:
 - **Modular Architecture**: Clean separation of data, models, and serving layers
@@ -11,7 +13,7 @@ This project implements an end-to-end MLOps system for wine quality prediction, 
 - **CI/CD Automation**: GitHub Actions workflow for continuous training and deployment
 - **Observability**: Comprehensive logging across all pipeline components
 
-## 📊 Dataset
+## Dataset
 
 The Wine Quality dataset from UCI Machine Learning Repository contains physicochemical test results for Portuguese "Vinho Verde" red wine with quality scores (0-10).
 
@@ -23,7 +25,7 @@ The Wine Quality dataset from UCI Machine Learning Repository contains physicoch
 
 **Target**: Quality score (regression task)
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 wine-quality-mlops/
@@ -46,7 +48,7 @@ wine-quality-mlops/
 #### 1. **Model Choice: Random Forest Regressor**
 - **Why**: Robust, interpretable, handles non-linear relationships
 - **Trade-off**: Slightly slower than linear models but better accuracy
-- **Alternative**: Gradient Boosting for potentially better performance
+
 
 #### 2. **MLflow for Experiment Tracking**
 - **Why**: Industry standard, comprehensive tracking, model registry
@@ -64,27 +66,9 @@ wine-quality-mlops/
 - **Alternative**: Environment variables or config server
 
 #### 5. **GitHub Actions for CI/CD**
-- **Why**: Integrated with GitHub, free for public repos
-- **Trade-off**: Vendor lock-in but widely adopted
-- **Alternative**: Jenkins, GitLab CI, CircleCI
+GitHub Actions handled automation well for a small project
 
-## 🚀 Quick Start
-
-### Deployment on Replit
-
-**Ready to deploy?** This project is pre-configured for Replit Autoscale Deployment:
-
-1. Click the **Deploy** button in Replit
-2. Select **Autoscale Deployment** (already configured)
-3. Click **Deploy** - that's it!
-
-The deployment configuration automatically runs:
-```bash
-uvicorn src.api.main:app --host 0.0.0.0 --port 5000
-```
-
-For detailed deployment instructions, see **[DEPLOYMENT.md](DEPLOYMENT.md)**.
-
+ 
 ### Prerequisites
 - Python 3.11+
 - pip
@@ -256,7 +240,7 @@ data:
 4. Total sulfur dioxide
 5. Density
 
-## 🔧 Extending the Pipeline
+##  Extending the Pipeline
 
 ### Adding a New Model
 
@@ -278,7 +262,7 @@ data:
 - Set up alerting for model performance degradation
 - Add automated retraining triggers
 
-## 🛠️ Development
+##  Development
 
 ### Project Structure Explanation
 
@@ -298,7 +282,7 @@ def test_your_feature():
     assert True
 ```
 
-## 📦 Dependencies
+##  Dependencies
 
 Core libraries:
 - **scikit-learn**: Model training
@@ -308,7 +292,7 @@ Core libraries:
 - **pydantic**: Data validation
 - **pytest**: Testing
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature`
@@ -318,38 +302,6 @@ Core libraries:
 6. Push: `git push origin feature/your-feature`
 7. Submit a Pull Request
 
-## 📄 License
+##  License
 
 This project is for assessment purposes.
-
-## 🎓 Technical Assessment Notes
-
-This implementation demonstrates:
-
-✅ **Code Quality**: Modular, documented, type-hinted, PEP 8 compliant  
-✅ **Reproducibility**: Fixed seeds, versioned dependencies, MLflow tracking  
-✅ **Modularity**: Clear separation of concerns, reusable components  
-✅ **Observability**: Comprehensive logging, MLflow metrics, API monitoring  
-✅ **Simplicity**: Easy to understand, extend, and deploy  
-✅ **Production-Ready**: Error handling, input validation, health checks  
-
-### Key Assumptions
-
-1. **Dataset Availability**: Wine quality CSV is accessible from UCI repository
-2. **Compute Resources**: Local machine sufficient for small dataset
-3. **Deployment Target**: Single server (can scale with load balancer)
-4. **Model Updates**: Manual retraining (can automate with schedulers)
-
-### Future Enhancements
-
-- **Feature Store**: Centralized feature management
-- **Model Registry**: Versioned model management with MLflow
-- **A/B Testing**: Multi-model comparison framework
-- **Data Validation**: Great Expectations integration
-- **Monitoring Dashboard**: Grafana/Prometheus stack
-- **Automated Retraining**: Trigger on performance degradation
-- **Model Explainability**: SHAP values for predictions
-
----
-
-**Built with ❤️ for MLOps excellence**
